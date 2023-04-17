@@ -1,1 +1,47 @@
-frist test
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Recipe Search</h1>
+    <label for="query">Search for a recipe:</label>
+    <input type="text" id="query">
+    <button id="search">Search</button>
+
+    <div id="results"></div>
+
+    <script>
+      $(function() {
+        $("#search").on("click", function() {
+          var query = $("#query").val();
+          var apiKey = "c89f94ba870349e58b1f300001277c2125b10aee";
+          var apiURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
+                       apiKey +
+                       "&query=" +
+                       encodeURIComponent(query) +
+                       "&number=10";
+
+          $.ajax({
+            url: apiURL,
+            success: function(r) {
+              var results = r.results;
+              var html = "<h2>Results</h2><ul>";
+              for (var i = 0; i < results.length; i++) {
+                var title = results[i].title;
+                var image = results[i].image;
+
+                html += "<li><div class='result'><img src='" + image + "'>";
+                html += "<h3>" + title + "</h3></div></li>";
+              }
+              html += "</ul>";
+              $("#results").html(html);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
