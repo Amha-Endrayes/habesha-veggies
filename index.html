@@ -17,12 +17,12 @@
       $(function() {
         $("#search").on("click", function() {
           var query = $("#query").val();
-          var apiKey = "c89f94ba870349e58b1f300001277c2125b10aee";
+          var apiKey = "f1083e5004e843e79c3c6fbdad4bd9f0";
           var apiURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
                        apiKey +
                        "&query=" +
                        encodeURIComponent(query) +
-                       "&number=10";
+                       "&number=5&includeNutrition=true";
 
           $.ajax({
             url: apiURL,
@@ -38,6 +38,9 @@
               }
               html += "</ul>";
               $("#results").html(html);
+            },
+            error: function(r) {
+              $("#results").html("<p>An error occurred. Please try again later.</p>");
             }
           });
         });
