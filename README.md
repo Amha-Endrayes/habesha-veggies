@@ -1,9 +1,5 @@
 # Habesha Veggies
-Habesha Veggies is a web application and personalised nutritionist that allows users to plan their meals, calculate calories, and find recipes focucing on traditional Ethiopian cuisine and other easy-to-prepare vegan meals.
-
-# Vegetarian Meal Planner Website
-
-This website is a meal planner and recipe resource for people looking to explore traditional Ethiopian cuisine and other easy-to-prepare vegetarian meals. It features a calorie calculator, personalized meal planning using GPT 3.5 API, and nutritional information and recipes sourced from the spoonacular API.
+Habesha Veggies is a web application and personalised nutritionist for people looking to explore traditional Ethiopian cuisine and other easy-to-prepare vegetarian meals. It features a calorie calculator, personalized meal planning using GPT 3.5 API, and nutritional information and recipes sourced from the spoonacular API.
 
 ## Technologies and Third-Party Services Used
 
