@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+dist
+node_modules
+npm-debug.log
+/webpack/lib
+mup.json
+settings.json
+coverage
+_translations
